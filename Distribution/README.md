@@ -15,3 +15,6 @@ In addition to the above, please understand the risks of modifying ReSync intern
 
 ### Policy Notice
 Your use of these files is governed by <a href="https://policies.polymatic.co/Terms/">ReSync's Terms of Service</a>.
+
+### Learn More
+Want to know how it works? Check out <a href="https://github.com/MasterKingSirPlease/ProjectReSync/blob/main/Documentation/Loader.md">the documentation</a>.
