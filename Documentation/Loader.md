@@ -10,12 +10,16 @@ The purpose of the ``Loader`` script inside of the model is to act as a boot pro
 | Dependency    | What it Does |
 | ----------- | ---------------------------- 
 | HttpService ``http``  | Roblox service to handle HTTP requests
-| DataStorage | Support module for interfacing with data stores in Roblox
-| InternalFlags | 
-| CRC32 | 32-bit cyclic redundancy check, ensures that data is not corrupt or tampered with
+| DataStorage ``dModule`` | Support module for interfacing with data stores in Roblox
+| InternalFlags ``iFlags`` | x
+| DefaultSettings ```` | x
 | Interpreter | Lua bytecode interpreter, modified for ReSync purposes
-| 
+| InputStream ```` | x
+| LibDeflate ```` | x
+| Serial ``serial`` | x
 
 Following this step, the local data storage dependency is loaded into the variable ``dModule``. From here, the system checks to see if the location defined at the top of the script as the variable ``settings`` is valid, and if it is a ModuleScript containing a table. If not, the system marks that default settings will be loaded. After this,  Next, ``settings.DataCategory`` is validated, and if it does not exist or is not a string, the system defaults to "``ReSync``". The data stored within said category is retrieved with ``dModule:GetCategory(category)``.
 
 There is one caveat to this - Roblox deletes assets from the creator marketplace that utilize the only two functions capable of environment retrieval and manipulation, those being ``getfenv`` and ``setfenv``. It is for this reason that there is a property in the script settings called "Environment", which is commented out by default, and it's up to the end user to remove that comment in order to permit the system to load.
+
+32-bit cyclic redundancy check, ensures that data is not corrupt or tampered with
