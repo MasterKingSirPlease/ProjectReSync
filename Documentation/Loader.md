@@ -17,7 +17,7 @@ The purpose of the ``Loader`` script inside of the model is to act as a boot pro
 | LibDeflate ``balloon`` | String compression and decompression
 | Serial ``serial`` | Manipulation of binary data into data storage, and reversing that process for execution
 
-Following this step, the error function is modified to display ReAync's tag and set the level to 0. From here, the system checks to see if the location defined at the top of the script as the variable ``settingsModule`` is valid, and if it is a ModuleScript containing a table. If not, the system marks that default settings will be loaded. Then, the local data storage dependency is loaded into the variable ``dModule``. Next, ``settings.DataCategory`` is validated, and if it does not exist or is not a string, the system defaults to "``ReSync``". The data stored within said category is retrieved with ``dModule:GetCategory(category)``. Alternatively, if ``settings.LocalBuild`` is set to true, the system will build itself here. As the compiler is not natively included with the release version of ReSync, this will throw an error if attempted by the end user. If the file system is unable to be found or is corrupted (more on the latter shortly), an additional step will be performed here, which is detailed below. Otherwise, see **init**.
+Following this step, the error function is modified to display ReAync's tag and set the level to 0. From here, the system checks to see if the location defined at the top of the script as the variable ``settingsModule`` is valid, and if it is a ModuleScript containing a table. If not, the system marks that default settings will be loaded. Then, the local data storage dependency is loaded into the variable ``dModule``. Next, ``settings.DataCategory`` is validated, and if it does not exist or is not a string, the system defaults to "``ReSync``". The data stored within said category is retrieved with ``dModule:GetCategory(category)``. If the file system is unable to be found or is corrupted (more on the latter shortly), an additional step will be performed here, which is detailed below. Otherwise, see **init**.
 
 ## Archive Download
 In the event that ReSync must be obtained from the endpoint, the following steps are performed:
@@ -27,7 +27,12 @@ In the event that ReSync must be obtained from the endpoint, the following steps
 4. An HTTPS GET is sent to ``Distribution/{iFlags.SourceName}_{latest}.rsarc?raw=true``. The RSArc file extension stands for ReSync Archive, and is a proprietary binary format.
 5. Jump to **init**.
 
-## Init
+## init
+``init`` is the main function in the loader, and it serves as the entry point into the system internals.
+1a. The RSArc is parsed into a stream object for binary reading.
+1b.The loader will first read an eight byte double from the input stream. This number is the string length of the compressed bootstrap program.
+1c. The previously determined number is extracted from the stream and then wrapped into an executable function, ``ReSync``.
+2a. Alternatively, if ``settings.LocalBuild`` is set to true, the system will build itself here. As the compiler is not natively included with the release version of ReSync, this will throw an error if attempted by the end user.
 
 There is one caveat to this - Roblox deletes assets from the creator marketplace that utilize the only two functions capable of environment retrieval and manipulation, those being ``getfenv`` and ``setfenv``. It is for this reason that there is a property in the script settings called "Environment", which is commented out by default, and it's up to the end user to remove that comment in order to permit the system to load.
 
