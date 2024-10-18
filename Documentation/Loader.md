@@ -21,11 +21,13 @@ Following this step, the error function is modified to display ReAync's tag and 
 
 ## Archive Download
 In the event that ReSync must be obtained from the endpoint, the following steps are performed:
-1. The Roblox engine checks HttpEnabled, and if not, throws an error.
+1. The Roblox engine checks HttpEnabled (because we finally have read access to that property instead of having to send a GET to google.com), and if not, throws an error.
 2. An HTTPS request is sent to this repository at ``Distribution/LatestVersion.txt`` to determine which build should be downloaded.
 3. A fix is applied to the returned string, removing the termination character (0x10). As this character is invisible, it will not appear in the string if printed, which actually caused significant confusion and delay in development due to it being so difficult to spot.
 4. An HTTPS GET is sent to ``Distribution/{iFlags.SourceName}_{latest}.rsarc?raw=true``. The RSArc file extension stands for ReSync Archive, and is a proprietary binary format.
 5. Jump to **init**.
+
+## Init
 
 There is one caveat to this - Roblox deletes assets from the creator marketplace that utilize the only two functions capable of environment retrieval and manipulation, those being ``getfenv`` and ``setfenv``. It is for this reason that there is a property in the script settings called "Environment", which is commented out by default, and it's up to the end user to remove that comment in order to permit the system to load.
 
