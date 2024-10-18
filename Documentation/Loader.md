@@ -45,3 +45,5 @@ In the event that ReSync must be obtained from the endpoint, the following steps
 5. ReSync is called with no arguments.
 
 # TODO direct link to init
+
+32-bit cyclic redundancy check
