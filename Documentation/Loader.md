@@ -29,9 +29,13 @@ In the event that ReSync must be obtained from the endpoint, the following steps
 
 ## init
 ``init`` is the main function in the loader, and it serves as the entry point into the system internals.
+
 1a. The RSArc is parsed into a stream object for binary reading.
+
 1b.The loader will first read an eight byte double from the input stream. This number is the string length of the compressed bootstrap program.
+
 1c. The previously determined number is extracted from the stream and then wrapped into an executable function, ``ReSync``.
+
 2a. Alternatively, if ``settings.LocalBuild`` is set to true, the system will build itself here. As the compiler is not natively included with the release version of ReSync, this will throw an error if attempted by the end user.
 
 There is one caveat to this - Roblox deletes assets from the creator marketplace that utilize the only two functions capable of environment retrieval and manipulation, those being ``getfenv`` and ``setfenv``. It is for this reason that there is a property in the script settings called "Environment", which is commented out by default, and it's up to the end user to remove that comment in order to permit the system to load.
