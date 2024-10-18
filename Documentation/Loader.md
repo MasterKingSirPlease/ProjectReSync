@@ -46,4 +46,4 @@ In the event that ReSync must be obtained from the endpoint, the following steps
 
 # TODO direct link to init
 
-32-bit cyclic redundancy check
+32-bit cyclic redundancy check, ensures that data is not corrupt or tampered with
