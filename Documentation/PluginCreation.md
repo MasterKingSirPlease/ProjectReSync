@@ -11,3 +11,4 @@ ReSync's plugins are divided into two distinct categories, those being regular p
 | Global | Description |
 | ------ | ----------- |
 | wait | Mirrors the wait function using an event-based loop. This permits the use of wait - it's convenient - without the drawbacks of Roblox's 30 Hz pipeline.
+| table.deepcopy | 
