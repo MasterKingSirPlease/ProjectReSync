@@ -1,3 +1,3 @@
-# How to Make a Plugin with ReSync
+## How to Make a Plugin with ReSync
 
 <hr>
