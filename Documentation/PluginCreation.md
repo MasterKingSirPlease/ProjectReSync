@@ -13,5 +13,5 @@ ReSync's plugins are divided into two distinct categories, those being regular p
 | ``wait`` | Mirrors the wait function using an event-based loop. This permits the use of wait - it's convenient - without the drawbacks of Roblox's 30 Hz pipeline.
 | ``table`` | C
 Added ``deepcopy`` method which copies metatables and sub-tables instead of the shallow table returned by ``table.copy``.
-| ``getfenv``, `setfenv`` | Security modification to prevent access to the internal environment from plugins. Additional measures are taken to ensure copies of the original function declared outside of the plugin function, passed through a Bindable, or the _G/shared tables cannot bypass this and gain a higher security context. Additionally, these functions cannot be used on any member of the APIs.
+| ``getfenv``, ``setfenv`` | Security modification to prevent access to the internal environment from plugins. Additional measures are taken to ensure copies of the original function declared outside of the plugin function, passed through a Bindable, or the _G/shared tables cannot bypass this and gain a higher security context. Additionally, these functions cannot be used on any member of the APIs.
 | ``game``, ``script``, ``workspace`` | Players service is modified to automatically overwrite Player instances to permit custom properties and methods on each Player.
