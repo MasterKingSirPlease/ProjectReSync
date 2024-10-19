@@ -7,6 +7,6 @@ Inside of each plugin, Players are modified to include custom properties and met
 Properties
 -
 | Property | Returns | Description | Writable |
-| --- |
+| -------- | ------- | ----------- | -------- |
 | tst |
 <b>boolean ``IsRoot``</b> Returns whether or not the Player is a root user.
