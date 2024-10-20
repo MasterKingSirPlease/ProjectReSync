@@ -14,7 +14,7 @@ There are four separate levels of permission that come with ReSync:
 3 | Super Administrator
 ```
 ## Flags
-Permission flags are detailed in the settings panel, and are properties that determine whether or not the Player has certain abilities.
+Permission flags are detailed in the settings panel, and are properties that determine whether or not the Player has certain abilities. These flags are determinant on the drop
 ## Root
 The root user power is not associated with any specific permission level itself, although all specified root users are automatically given Super permissions. Root users are specified to identify game developers who should have full access to the system settings.
 
