@@ -21,7 +21,7 @@ The purpose of the ``Loader`` script inside of the model is to act as a boot pro
 | LibDeflate ``balloon``          | String compression and decompression
 | Serial ``serial``               | Manipulation of binary data into data storage, and reversing that process for execution
 
-Following this step, the error function is modified to display ReAync's tag and set the level to 0. From here, the system checks to see if the location defined at the top of the script as the variable ``settingsModule`` is valid, and if it is a ModuleScript containing a table. If not, the system marks that default settings will be loaded. Then, the local data storage dependency is loaded into the variable ``dModule``. Next, ``settings.DataCategory`` is validated, and if it does not exist or is not a string, the system defaults to "``ReSync``". The data stored within said category is retrieved with ``dModule:GetCategory(category)``. If the file system is unable to be found or is corrupted (more on the latter shortly), an additional step will be performed here, which is detailed below. Otherwise, see **<a href="https://github.com/MasterKingSirPlease/ProjectReSync/blob/main/Documentation/Loader.md#init">init</a>**.
+Following this step, the error function is modified to display ReAync's tag and set the level to 0. From here, the system checks to see if the location defined at the top of the script as the variable ``settingsModule`` is valid, and if it is a ModuleScript containing a table. If not, the system marks that default settings will be loaded. Then, the local data storage dependency is loaded into the variable ``dModule``. Next, ``settings.DataCategory`` is validated, and if it does not exist or is not a string, the system defaults to "``ReSync``". The data stored within said category is retrieved with ``dModule:GetCategory(category)``. If the file system is unable to be found or is corrupted (more on the latter shortly), an additional step will be performed here, which is detailed below. Otherwise, see **<a href="./Loader.md#init">init</a>**.
 
 ## Archive Download
 In the event that ReSync must be obtained from the endpoint, the following steps are performed:
@@ -29,7 +29,7 @@ In the event that ReSync must be obtained from the endpoint, the following steps
 2. An HTTPS request is sent to this repository at ``Distribution/LatestVersion.txt`` to determine which build should be downloaded.
 3. A fix is applied to the returned string, removing the termination character (0x10). As this character is invisible, it will not appear in the string if printed, which actually caused significant confusion and delay in development due to it being so difficult to spot.
 4. An HTTPS GET is sent to ``Distribution/{iFlags.SourceName}_{latest}.rsarc?raw=true``. The RSArc file extension stands for ReSync Archive, and is a proprietary binary format.
-5. Jump to **<a href="https://github.com/MasterKingSirPlease/ProjectReSync/blob/main/Documentation/Loader.md#init">init</a>**.
+5. Jump to **<a href="./Loader.md#init">init</a>**.
 
 ## init
 ``init`` is the main function in the loader, and it serves as the entry point into the system internals.
