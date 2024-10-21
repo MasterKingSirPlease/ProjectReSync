@@ -12,7 +12,7 @@ end
 ```lua
 -- Outside script
 repeat
-	wait()
+  wait()
 until _G.SAPI ~= nil
 _G.SAPI:TestPrint('It works')
 ```
