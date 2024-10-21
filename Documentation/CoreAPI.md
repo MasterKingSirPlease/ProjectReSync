@@ -11,7 +11,8 @@ The CoreAPI is similar to the SyncAPI in that it is utilized to interface with t
 
 ## Methods
 | Method | Parameters | Returns | Description |
-| ------ | ---------- | ------- | ----------- | RetrieveRegistry | nil | \<table reg> | Fetches settings from the data store.
+| ------ | ---------- | ------- | ----------- |
+| RetrieveRegistry | nil | \<table reg> | Fetches settings from the data store.
 | SubmitRegistry | \<table newReg> | \<boolean success> | Merges the changes made to the registry into the settings.
 | BlockPush | \<string category> \<boolean block> \<optional:reason> | nil | Sends a message to all running servers to disallow changes to the specified ``category``. Used primarily if someone is editing the settings.
 | BlockPull | \<string category> \<boolean block> | nil | Sends a message to all running servers to stop reading from the specified ``category``. Used immediately before updating the system to prevent data store access in order to avoid potential errors.
