@@ -25,7 +25,7 @@ _G.SAPI:TestPrint('It works')
 | Method      | Parameters                                                         | Returns                                    | Description |
 | ----------- | ------------------------------------------------------------------ | ------------------------------------------ | ----------- |
 | ApplyFilter | \<Instance player> \<string message> \<optional:Instance playerTo> | \<boolean cleansed> \<string cleansedData> | Sends ``message`` through Roblox's chat filter. If ``playerTo`` is invalid or not specified, the string will be filtered for broadcast.
-| Display     | \<Instance player> \<string notifType> ...                         | variable                                   | Refer to <a href="">Notifications</a>.
+| Display     | \<Instance player> \<string notifType> ...                         | variable                                   | Refer to <a href="../SyncAPI.md">Notifications</a>.
 
 ## Command Creation and Destruction
 The SyncAPI can be called directly like a function to make or delete a command. Todo. If you wish to remove a command, call the SyncAPI and pass the first argument as the command name or shorthand, and the second argument as ``false``. An example has been provided below:
