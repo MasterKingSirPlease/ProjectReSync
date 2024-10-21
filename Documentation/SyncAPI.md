@@ -6,7 +6,7 @@ The Synchronized Application Programming Interface is the most powerful aspect o
 ```lua
 -- Plugin script
 return function()
-	_G.SAPI = SyncAPI
+  _G.SAPI = SyncAPI
 end
 ```
 ```lua
