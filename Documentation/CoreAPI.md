@@ -10,11 +10,13 @@ The CoreAPI is similar to the SyncAPI in that it is utilized to interface with t
 | DevLog | \<table dLog> | A table of information from the system containing warnings, errors, and general messages.
 
 ## Methods
-| Method | Parameters | Returns | Description |
-| ------ | ---------- | ------- | ----------- |
-| RetrieveRegistry | nil | \<table reg> | Fetches settings from the data store.
-| SubmitRegistry | \<table newReg> | \<boolean success> | Merges the changes made to the registry into the settings.
-| BlockPush | \<string category> \<boolean block> \<optional:reason> | nil | Sends a message to all running servers to disallow changes to the specified ``category``. Used primarily if someone is editing the settings.
-| BlockPull | \<string category> \<boolean block> | nil | Sends a message to all running servers to stop reading from the specified ``category``. Used immediately before updating the system to prevent data store access in order to avoid potential errors.
+| Method           | Parameters                                             | Returns            | Description |
+| ---------------- | ------------------------------------------------------ | ------------------ | ----------- |
+| RetrieveRegistry | nil                                                    | \<table reg>       | Fetches settings from the data store.
+| SubmitRegistry   | \<table newReg>                                        | \<boolean success> | Merges the changes made to the registry into the settings.
+| BlockPush        | \<string category> \<boolean block> \<optional:reason> | nil                | Sends a message to all running servers to disallow changes to the specified ``category``. Used primarily if someone is editing the settings.
+| BlockPull        | \<string category> \<boolean block>                    | nil                | Sends a message to all running servers to stop reading from the specified ``category``. Used immediately before updating the system to prevent data store access in order to avoid potential errors.
+| PullBlocked      | \<string category>                                     | \<boolean blocked> | Checks if the specified pull is actively being blocked.
+| PushBlocked      | \<string category>                                     | \<boolean blocked> | Checks if the specified push is actively being blocked.
 
 todo pullblocked and push blocked with indexed via dot not colon
