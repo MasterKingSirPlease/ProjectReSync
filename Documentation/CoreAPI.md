@@ -4,10 +4,10 @@ todo core api here
 The CoreAPI is similar to the SyncAPI in that it is utilized to interface with the system. The main difference is that it is more restrictive and meant mainly for internal use and inside of the core plugins. Unlike the SyncAPI, it is locked and cannot be edited. Additionally, for security reasons, any attempt to use the CoreAPI outside of a plugin will cause an error.
 
 ## Properties
-| Property | Returns | Description |
-| -------- | ------- | ----------- |
+| Property | Returns       | Description |
+| -------- | ------------- | ----------- |
 | Commands | \<table cmds> | A table of all commands constructed by the SyncAPI.
-| DevLog | \<table dLog> | A table of information from the system containing warnings, errors, and general messages.
+| DevLog   | \<table dLog> | A table of information from the system containing warnings, errors, and general messages.
 
 ## Methods
 | Method           | Parameters                                             | Returns            | Description |
