@@ -29,6 +29,7 @@ Properties
 Methods
 -
 | Method | Parameters | Returns | Description |
+| ------ | ---------- | ------- | ----------- |
 | GetPermission | \<optional:boolean auto> | \<number level> | Returns an integer between 0 and 3 representing the Player's permission, with 0 being basic user, 1 being Moderator, 2 being Administrator, and 3 as Super Administrator. If ``auto`` is ``true``, the int returned will be the permission level that is saved in the data store. This can be used to get the Player's permanent permission if it has been temporarily set to a different level in the current server.
 | SetPermission | \<number level OR string "Auto"> \<optional:boolean save> | nil | Changes the Player's permission to the specified level. If ``save`` is ``true``, their permission will be saved to the data store across all servers both present and future. This parameter defaults to ``false``. If ``level`` is a string that is equal to "Auto" then the Player's permission will be reset to the level saved in the data store.
 | Display | \<string notifType> ... | variable | Equivalent to ``SyncAPI:Display(player,notifType,...)``, but the ``player`` argument is automatically filled in.
