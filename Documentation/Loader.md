@@ -10,16 +10,16 @@ How it Works
 -
 The purpose of the ``Loader`` script inside of the model is to act as a boot program for ReSync. Ideally, this boot process would be unnecessary, instead pulling the source directly from a ``MainModule`` via the use of ``require(Id)``, but as explained earlier, this is sadly no longer possible. At the top of the loader is the path to the ``Settings`` ModuleScript. This can be changed by a developer who wishes to place the settings module in a separate location from the default file structure. This would be strange, but some people are picky about where their stuff is stored for organizational purposes. First, the loader begins running a benchmark. This is done to monitor how long it takes for the system to initialize, and is done by calling the built-in ``os.clock()`` function, which returns the number of seconds passed since the CPU first started. Since this is running on the server, it returns the amount of time passed since the Server's CPU began running. This number isn't always zero when the server first boots, indicating that a "game server" may not be a phycial Roblox server. Regardless, this number being arbitrary does not negatively impact the purpose the loader is utilizing it for, so long as it consistently continues to count from that epoch with sub-second precision. As explained previously, two values, those being the locations of the ReSync directory ``project`` and the settings ModuleScript ``settingsModule``, are declared so that the end user has control over where they place different parts of the system. Following this, the loader script itself is sent into variable ``loader`` for ease of access. The next thing that the loader does is to initialize the table ``bootLog``, which is an array of strings that will be sent to the internal program as part of a series of "external" information. More on this later. After this, the loader retrieves a variety of dependencies, which are detailed below:
 
-| Dependency    | What it Does |
-| ----------- | ---------------------------- 
-| HttpService ``http``  | Roblox service to handle HTTP requests
-| DataStorage ``dModule`` | Support module for interfacing with data stores in Roblox
-| InternalFlags ``iFlags`` | Static feature flags reserved as part of the internal SDK to quickly toggle portions of code
+| Dependency                      | What it Does |
+| ------------------------------- | ------------ |
+| HttpService ``http``            | Roblox service to handle HTTP requests
+| DataStorage ``dModule``         | Support module for interfacing with data stores in Roblox
+| InternalFlags ``iFlags``        | Static feature flags reserved as part of the internal SDK to quickly toggle portions of code
 | DefaultSettings ``defaultSets`` | ReSync script setting defaults in the absence of a setting, or mismatched type; not to be confused with the settings that can be edited from in-game
-| Interpreter ``wrap`` | Lua bytecode interpreter, modified for ReSync purposes
-| InputStream ``inStm`` | Handles the reading of binary data
-| LibDeflate ``balloon`` | String compression and decompression
-| Serial ``serial`` | Manipulation of binary data into data storage, and reversing that process for execution
+| Interpreter ``wrap``            | Lua bytecode interpreter, modified for ReSync purposes
+| InputStream ``inStm``           | Handles the reading of binary data
+| LibDeflate ``balloon``          | String compression and decompression
+| Serial ``serial``               | Manipulation of binary data into data storage, and reversing that process for execution
 
 Following this step, the error function is modified to display ReAync's tag and set the level to 0. From here, the system checks to see if the location defined at the top of the script as the variable ``settingsModule`` is valid, and if it is a ModuleScript containing a table. If not, the system marks that default settings will be loaded. Then, the local data storage dependency is loaded into the variable ``dModule``. Next, ``settings.DataCategory`` is validated, and if it does not exist or is not a string, the system defaults to "``ReSync``". The data stored within said category is retrieved with ``dModule:GetCategory(category)``. If the file system is unable to be found or is corrupted (more on the latter shortly), an additional step will be performed here, which is detailed below. Otherwise, see **<a href="https://github.com/MasterKingSirPlease/ProjectReSync/blob/main/Documentation/Loader.md#init">init</a>**.
 
