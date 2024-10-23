@@ -157,27 +157,11 @@ end)
 -- Buttons can be declared directly inside of the Display call, but separating it in the example makes it easier to visualize and manage, particularly if they are dynamic
 local pages = {
   -- Implicit page 1
-  {
-    'A',
-    'B',
-    'C',
-    '>',
-  },
+  {'A','B','C','>',},
   -- Implicit page 2
-  {
-    '<',
-    'D',
-    'E',
-    'F',
-    '>',
-  },
+  {'<', 'D','E','F','>',},
   -- Implicit page 3
-  {
-    '<',
-    'G',
-    'H',
-    'I',
-  },
+  {'<','G','H','I',},
 }
 local currentPage = 1
 
