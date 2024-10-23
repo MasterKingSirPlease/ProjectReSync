@@ -165,7 +165,7 @@ local pages = {
 }
 local currentPage = 1
 
-local pgSelector = SyncAPI:Display('Popup',player,'PAGE '..tostring(currentPage),'Which page do you want to go to?','Info',pages[currentPage])
+local pgSelector = SyncAPI:Display('Popup',player,'PAGE '..tostring(currentPage),'Which letter is your favorite?','Info',pages[currentPage])
 pgSelector.KeepAlive = true -- Don't make it go away when the user clicks an option
 
 local function changePage()
