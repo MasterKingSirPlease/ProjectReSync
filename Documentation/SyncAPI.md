@@ -19,7 +19,7 @@ _G.SAPI:TestPrint('It works')
 ## Properties
 | Property | Returns | Description |
 | -------- | ------- | ----------- |
-| AuditLog | \<table audit> | A table of all commands that have been executed.
+| AuditLog | \<table audit> | A table of all commands that have been executed. Note that this list is *not* filtered, and you will need to call ``SyncAPI.ApplyFilter`` to comply with Roblox's ToS.
 
 ## Methods
 | Method             | Parameters                                                                                                                                          | Returns                                    | Description
@@ -35,3 +35,25 @@ The SyncAPI can be called directly like a function to make or delete a command. 
 -- I don't want the "urmom" command anymore
 SyncAPI('urmom',false) -- Get rid of it!
 ```
+
+## Code Examples
+### AuditLog
+
+```lua
+  -- MasterScootScoot executes commands ":slock" and ":kick foo bar"
+  for index,log in pairs(SyncAPI.AuditLog) do
+    print(index,log[1],log[2])
+  end
+
+  --[[
+  OUTPUT
+  ------
+  1, 'MasterScootScoot', 'slock'
+  2, 'MasterScootScoot', 'kick foo bar'
+  ]]
+```
+
+### ApplyFilter
+TODO
+
+### GetPermissionLevel
