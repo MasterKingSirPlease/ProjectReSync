@@ -1,4 +1,4 @@
-todo either rs dev or syncapi icon
+<div align=center><img src="https://github.com/user-attachments/assets/15709da5-f509-4c96-963d-8cce51372a5e" height="166" width="589"></div><br>
 
 ## Sending and Managing Notifications
 The <a href="./SyncAPI.md">SyncAPI</a> is capable of sending messages to Players, and receiving different input and responses from those messages. You can send a notification to a Player via ``SyncAPI:Display(notifType,player,...)``. This documentation details each different type of notification that can be sent, and how to interact with them.
