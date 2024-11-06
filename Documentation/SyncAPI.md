@@ -1,4 +1,4 @@
-![SyncAPI](https://github.com/user-attachments/assets/a41fc94c-e0b8-4ec4-96ff-71bb634fac93)
+<div align=center><img src="https://github.com/user-attachments/assets/a41fc94c-e0b8-4ec4-96ff-71bb634fac93" height="166" width="589"></div><br>
 
 ## Overview
 The Synchronized Application Programming Interface is the most powerful aspect of ReSync. Its role is to communicate with the system to access and modify different parts of ReSync. It comes preloaded with a bunch of features that you can use as a developer, but it's also possible to make your own modifications to it. With this being said, it's not recommended that you change the built-in data, or you could risk causing issues to the stability of the system, as the SyncAPI is also used internally within the firmware itself. The SyncAPI is accessible from all plugins as a global variable. Due to Roblox limitations, if you wish to utilize it outside of the plugin function, you'll have to create a plugin to do that. An example script for this has been written below and can be copied into your game:
