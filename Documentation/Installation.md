@@ -34,7 +34,7 @@ If you don't know how to script or this is your first time using ReSync, this qu
     > Is this going to open security risks for my experience?
     > - No. As long as you ensure that you are utilizing safe scripts in
     	   your game (verified free models and scripts you or your developers
-    	   have created yourself), you will not be at any risk of bad things
+    	   have created yourself), you will not be at any risk of vulnerabilities
     	   happening due to HTTP service being turned on.
 
 4. Move ReSync into Server Script Service
