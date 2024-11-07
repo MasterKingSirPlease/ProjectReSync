@@ -5,7 +5,7 @@
 ## Project ReSync Build Distributions
 These files contain the necessary code responsible for executing ReSync in your Roblox game.
 
-You can opt to revert to an older version from the in-game settings. However, this is not recommended.
+You can opt to revert to an older version by opening the in-game settings panel and selecing the BIOS. However, this is not recommended.
 
 >  [!WARNING]
 > Modifying these advanced settings can be harmful to the stability, performance and security of ReSync. You should only modify these settings if you are sure of what you are doing or instructed to do so by the developer of the system. Support will not be provided for outdated versions of the software.
