@@ -76,6 +76,6 @@ If you don't know how to script or this is your first time using ReSync, this qu
    }
    ```
 
-   5. Edit the primary settings from the panel
+5. Edit the primary settings from the panel
 
       Publish your game and play it from the app or website. ReSync won't run in Studio mode. Don't worry, as this is intentional. Once you're in-game, if you have chat enabled, you can say ":settings". Otherwise, press the quote key (') on your keyboard while not inside of a text box, and in the command line that appears, run "settings".
