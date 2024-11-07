@@ -69,8 +69,8 @@ If you don't know how to script or this is your first time using ReSync, this qu
 	   RootUsers = {
    	711971214, -- MasterScootScoot
    	1, -- Roblox
-   		{924821,200}, -- My admin fans, Development Lead
-   		{1200769,1}, -- All members of the Official Group of Roblox
+   	{924821,200}, -- My admin fans, Development Lead
+   	{1200769,1}, -- All members of the Official Group of Roblox
 	   },
 	
 	   -- Developer settings
