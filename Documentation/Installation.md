@@ -34,13 +34,13 @@ If you don't know how to script or this is your first time using ReSync, this qu
     > Is this going to open security risks for my experience?
     > - No. As long as you ensure that you are utilizing safe scripts in your game (verified free models and scripts you or your developers have created yourself), you will not be at any risk of vulnerabilities due to HTTP service being turned on.
 
-4. Move ReSync into Server Script Service
+3. Move ReSync into Server Script Service
 
    ![image](https://github.com/user-attachments/assets/f60fcf42-c352-4796-a5c5-f2532f616d59)
    ![image](https://github.com/user-attachments/assets/ffc5eb57-28d1-4526-9e3b-31f40b5bcf99)
    ![image](https://github.com/user-attachments/assets/83687432-8561-4e47-98c4-9f47b58855a1)
 
-3. Configure base settings
+4. Configure base settings
 
    Locate the ``Settings`` module under the ReSync directory and double click it to open it.
 
@@ -75,3 +75,7 @@ If you don't know how to script or this is your first time using ReSync, this qu
 	   DataCategory = 'RS_TEST', -- Fun fact, this was used as the data category for internal testing in ReSync's alpha version
    }
    ```
+
+   5. Edit the primary settings from the panel
+
+      Publish your game and play it from the app or website. ReSync won't run in Studio mode. Don't worry, as this is intentional. Once you're in-game, if you have chat enabled, you can say ":settings". Otherwise, press the quote key (') on your keyboard while not inside of a text box, and in the command line that appears, run "settings".
